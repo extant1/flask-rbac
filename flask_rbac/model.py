@@ -32,8 +32,7 @@ class RoleMixin(object):
 
         :param parent: Parent role to add in.
         """
-        parent.children.add(self)
-        self.parents.add(parent)
+        self.parents.append(parent)
 
     def add_parents(self, *parents):
         """Add parents to this role. Also should override if neccessary.
@@ -85,7 +84,7 @@ class UserMixin(object):
 
         :param role: Role to add.
         """
-        self.roles.add(role)
+        self.roles.append(role)
 
     def add_roles(self, *roles):
         """Add roles to this user.
